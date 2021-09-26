@@ -1,0 +1,28 @@
+<html>
+    <head>
+    <%- include("./partials/head.ejs")%>
+</head>
+    <body>
+        <%- include("./partials/header.ejs")%>
+        <h1>Budgtr</h1>
+        <table>
+            <th>Date</th>
+            <th>Transaction</th>
+            <th>Amount</th>
+            <% for(let i = 0; i < allBudgets.length; i++) { %>
+                <tr>
+                    <td><%= allBudgets[i].date%></td>
+                    <td><a href="budget/<%= i %>"><%=allBudgets[i].name%></a></td>
+                    <td><%= allBudgets[i].amount%></td>
+                </tr>
+                <% } %>
+        </table>
+       
+       
+                    
+                
+        
+       
+    </body>
+    <%- include("./partials/footer.ejs")%>
+</html>
