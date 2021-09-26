@@ -20,17 +20,18 @@ app.get("/budget/", (req, res) => {
   });
 
 //create
-  app.post(`/budget`, (req,res)=> {
-    req.body.tags = req.body.tags.split(`,`);
-    for(tag of req.body.tags){
-      console.log(tag[0])
-      if(tag[0]=== ` `){
-        console.log(`space found`)
-        tag = tag.substring(1);
-        console.log(tag)
-      }
-    }
-  })
+app.post("/budget", (req, res) => {
+  
+  if(req.body.budget === '0'){
+    req.body.budget = 0
+  } else {
+    req.body.budget = true
+  }
+  
+  budget.push(req.body)
+  
+  res.redirect("/budget/")
+});
  
   //show
   app.get("/budget/:indexOfBudgetsArray", (req, res) => {

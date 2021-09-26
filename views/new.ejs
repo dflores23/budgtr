@@ -3,13 +3,16 @@
     <%- include("./partials/head.ejs")%>
 <body>
     <%- include("./partials/header.ejs")%>
-    <h1>New Budget Page</h1>
-    <form action="/budgets" method="POST">
-        Name: <input type="text" name="name" /><br/>
-        Color: <input type="text" name="color" /><br/>
-        Is Ready To Eat: <input type="checkbox" name="readyToEat" /><br/>
-        <input type="submit" value="Create Fruit"/>
+    <div><h1> Add a new item</h1></div>
+    <form action="/budget/" method="POST">
+    <input type="text" name"date" placeholder="date"><br>
+    <input type="text" name"name" placeholder="name"><br>
+    <input type="number" name"amount" placeholder="amount"><br>
+    <input type="text" name"from" placeholder="from"><br>
+    <input type="text" name"tag" placeholder="tag"><br>
+    <input type="submit" value="New Expense"/><br>
     </form>
+    
     <%- include("./partials/footer.ejs")%>
 </body>
 </html>
