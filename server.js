@@ -12,7 +12,7 @@ app.use(methodOverride(`_method`))
 
 //index
 app.get("/budget/", (req, res) => {
-    res.render("index.ejs", { allBudgets: budgets, title: "Budgets - Index Page" });
+    res.render("index.ejs", { allBudgets: budgets, title: "Budgets - Index Page"});
   });
 //new
   app.get("/budget/new", (req, res) => {
@@ -21,16 +21,8 @@ app.get("/budget/", (req, res) => {
 
 //create
 app.post("/budget", (req, res) => {
-  
-  if(req.body.budget === '0'){
-    req.body.budget = 0
-  } else {
-    req.body.budget = true
-  }
-  
-  budget.push(req.body)
-  
-  res.redirect("/budget/")
+  budgets.push(req.body)
+res.redirect("/budget")
 });
  
   //show
